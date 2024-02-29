@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% block explain_contents %}
+<head>
+    <title>정보 등록</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+     <style>
+        body {
+            background-color: rgb(244, 246, 225); /* 전체 바탕색을 연한 녹색 계열로 설정 */
+        }
+        .form-control {
+            border-color: #28a745; /* 입력 필드 테두리를 녹색 계열로 설정 */
+            background-color: #f0f8f0; /* 입력 필드 배경색을 연한 녹색 계열로 설정 */
+        }
+        button {
+            background-color: #28a745; /* 버튼 배경색을 녹색 계열로 설정 */
+            color: white; /* 버튼 텍스트 색상을 흰색으로 설정 */
+            border: none; /* 버튼 테두리 제거 */
+            padding: 10px 20px; /* 버튼 패딩 */
+            border-radius: 5px; /* 버튼 둥근 테두리 설정 */
+            cursor: pointer; /* 마우스 오버시 커서 변경 */
+        }
+        button:hover {
+            background-color: #218838; /* 버튼 호버시 배경색을 더 어두운 녹색 계열로 변경 */
+        }
+        
+    </style>
+
+</head>
+<body>
+
+<div class="container mt-3">
+  <h2>입력 정보</h2>
+  <form action="/action_page.php" method="post">
+    <div class="row">
+      <div class="col-md-6 mb-3 mt-3">
+      <label for="region">지역 :</label>
+      <input type="text" class="form-control" id="region" placeholder="Enter region" name="region">
+    </div> 
+    <div class="col-md-6 mb-3">
+      <label for="avgtmp">평균기온(℃) :</label>
+      <input type="text" class="form-control" id="avgtmp" placeholder="Enter average temperature" name="avgtmp">
+    </div>
+    <div class="col-md-6 mb-3">
+      <label for="maxtmp">최고기온(℃) :</label>
+      <input type="text" class="form-control" id="maxtmp" placeholder="Enter max temperature" name="maxtmp">
+    </div>
+    <div class="col-md-6 mb-3">
+      <label for="mintmp">최저기온(℃) :</label>
+      <input type="text" class="form-control" id="mintmp" placeholder="Enter min temperature" name="mintmp">
+    </div>
+    <div class="col-md-6 mb-3">
+      <label for="precip">강수량 합계(mm) :</label>
+      <input type="text" class="form-control" id="precip" placeholder="Enter precipitation" name="precip">
+    </div>
+
+    <div class="col-md-6 mb-3">
+      <label for="humidity">상대습도 평균(%) :</label>
+      <input type="text" class="form-control" id="humidity" placeholder="Enter average humidity" name="humidity">
+    </div>
+    
+    <div class="col-md-6 mb-3">
+      <label for="sunshine">일조시간 합계(시간) :</label>
+      <input type="text" class="form-control" id="sunshine" placeholder="Enter total sunshine hours" name="sunshine">
+    </div>
+    
+    <div class="col-md-6 mb-3">
+      <label for="solar">수평면일사량 합계(MJ/㎡) :</label>
+      <input type="text" class="form-control" id="solar" placeholder="Enter total solar radiation" name="solar">
+        
+    <br> <!-- 여기가 라디오 버튼 -->
+    <div class="col-md-6 mb-3">
+        <label>계절 :</label>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="season" id="spring" value="봄">
+          <label class="form-check-label" for="spring">봄</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="season" id="summer" value="여름">
+          <label class="form-check-label" for="summer">여름</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="season" id="fall" value="가을">
+          <label class="form-check-label" for="fall">가을</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="season" id="winter" value="겨울">
+          <label class="form-check-label" for="winter">겨울</label>
+        </div>
+      </div>
+
+    <div class="form-check mb-3">
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox" name="remember"> Remember me
+      </label>
+    </div>
+    <button type="submit">Submit</button>
+ </form>
+</div>
+
+</body> 
+{% endblock explain_contents %}
